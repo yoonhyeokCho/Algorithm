@@ -3,7 +3,6 @@
 using namespace std;
 
 int dp[1000000]={0,};
-
 int main(){
     int input;
     cin>>input;
