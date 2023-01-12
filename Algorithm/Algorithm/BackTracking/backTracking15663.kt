@@ -7,7 +7,6 @@ import java.util.StringTokenizer
 private lateinit var arr: IntArray
 private lateinit var answer: IntArray
 private lateinit var visited: BooleanArray
-private lateinit var check:IntArray
 private val br = BufferedReader(InputStreamReader(System.`in`))
 private val bw = BufferedWriter(OutputStreamWriter(System.out))
 private var n = 0
@@ -26,7 +25,6 @@ fun main() {
     }
 
     arr.sort()
-    check = IntArray(arr[n]+1)
     dfs(0)
     bw.flush()
     bw.close()
@@ -41,11 +39,11 @@ private fun dfs(depth: Int) {
         bw.write("\n")
         return
     }
-    var count =0
+    var check =0
     for (i in 1..n) {
 
-        if(!visited[i] && count != arr[i]){
-            count = arr[i]
+        if(!visited[i] && check != arr[i]){
+            check = arr[i]
             visited[i] = true
             answer[depth] = arr[i]
             dfs(depth + 1)
